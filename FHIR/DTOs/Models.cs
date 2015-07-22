@@ -66,6 +66,17 @@ namespace FHIR.DTOs
     }
 
     [ComplexType]
+    public class MaritalStatus
+    {
+        public MaritalStatus()
+        {
+            Coding = new List<Coding>();
+        }
+        public List<Coding> Coding { get; set; }
+        public string Text { get; set; }
+    }
+
+    [ComplexType]
     public class Coding
     {
         public string System { get; set; }

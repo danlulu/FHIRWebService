@@ -17,6 +17,7 @@ namespace FHIR.DTOs
         {
             Address = new List<Address>();
             Gender = new Gender();
+            MaritalStatus = new MaritalStatus();
             Identifier = new List<Identifier>();
             Name = new List<Name>();
             ManagingOrganization = new Organization();
@@ -34,7 +35,7 @@ namespace FHIR.DTOs
         public bool DeceasedBoolean { get; set; }
         public string DeceasedDateTime { get; set; }
         public List<Address> Address { get; set; }
-        public string MaritalStatus { get; set; }
+        public MaritalStatus MaritalStatus { get; set; }
         public string Prefix { get; set; }
         public string Suffix { get; set; }
         public Organization ManagingOrganization { get; set; }
