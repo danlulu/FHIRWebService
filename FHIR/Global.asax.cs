@@ -19,30 +19,11 @@ namespace PatientWebService
             {
                 container.RegisterAutoWired<DataRepository>();
 
-                // Using the CorsFeature plugin
-                //Plugins.Add(new CorsFeature());
-                /* Default values:
-                CorsFeature(allowedOrigins: "*",
-                    allowedMethods: "GET, POST, PUT, DELETE, OPTIONS",
-                    allowedHeaders: "Content-Type",
-                    allowCredentials: false);
-                */
                 Plugins.Add(new CorsFeature(
                     allowOriginWhitelist: new[] { "http://localhost:36085", "http://localhost", "http://hwl59427d", "http://edwaitingtimes-test", "http://edwaitingtimes" },
                     allowedHeaders: "Content-Type",
                     allowCredentials: true
                     ));
-
-                //// Manually enabling CORS
-                //base.SetConfig(new HostConfig
-                //{
-                //    GlobalResponseHeaders = {
-                //        { "Access-Control-Allow-Origin", "http://localhost:36085" },
-                //        { "Access-Control-Allow-Methods", "GET, POST, OPTIONS" },
-                //        { "Access-Control-Allow-Headers", "accept, content-type, authorization, origin" },
-                //        { "Access-Control-Allow-Credentials", "true" },
-                //    }
-                //});
 
                 // Globally enable CORS for all OPTION requests
                 this.PreRequestFilters.Add((httpReq, httpRes) =>
@@ -61,35 +42,31 @@ namespace PatientWebService
         {
             new AppHost().Init();
         }
-
-        protected void Session_Start(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_BeginRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_AuthenticateRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_Error(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Session_End(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_End(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
+
+
+
+
+
+
+// Using the CorsFeature plugin
+//Plugins.Add(new CorsFeature());
+/* Default values:
+CorsFeature(allowedOrigins: "*",
+    allowedMethods: "GET, POST, PUT, DELETE, OPTIONS",
+    allowedHeaders: "Content-Type",
+    allowCredentials: false);
+*/
+
+//// Manually enabling CORS
+//base.SetConfig(new HostConfig
+//{
+//    GlobalResponseHeaders = {
+//        { "Access-Control-Allow-Origin", "http://localhost:36085" },
+//        { "Access-Control-Allow-Methods", "GET, POST, OPTIONS" },
+//        { "Access-Control-Allow-Headers", "accept, content-type, authorization, origin" },
+//        { "Access-Control-Allow-Credentials", "true" },
+//    }
+//});
