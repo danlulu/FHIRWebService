@@ -13,7 +13,7 @@ namespace FHIR
             {
                 var FullName = "Mr Daniel Lulu";
                 var Address = "1 Healthshare Avenue, Hamilton";
-                var DateOfBirth = "1985-03-11";
+                var DateOfBirth = "1980-03-11";
 
                 response.ResourceType = "Patient";
                 response.Text.Status = "generated";
